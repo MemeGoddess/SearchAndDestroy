@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Search and Destroy (Unofficial Update)</name>
+	<name>Search and Destroy</name>
 	<author>Roolo</author>
 	<supportedVersions>
       <li>1.0</li>
@@ -17,7 +17,7 @@
         <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
       </li>
     </modDependencies>
-	<packageId>MemeGoddess.SearchAndDestroy</packageId>
+	<packageId>roolo.SearchAndDestroy</packageId>
 	<description>
 Tired of pawns lounging about during the heat of the battle? Toggle Search and Destroy to let the AI take control over your pawns while you sit back and enjoy the slaughter. 
 
