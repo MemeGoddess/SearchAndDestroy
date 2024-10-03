@@ -79,10 +79,6 @@ namespace SearchAndDestroy
             targetList.AddRange(
                 pawn.Map.attackTargetsCache.TargetsHostileToFaction(faction)
                 .Where(attackTarget => thing.HostileTo(attackTarget.Thing)));
-            foreach (var attackTarget in targetList)
-            {
-                Log.Warning(attackTarget.Thing.Label);
-            }
             return targetList;
         }
     }

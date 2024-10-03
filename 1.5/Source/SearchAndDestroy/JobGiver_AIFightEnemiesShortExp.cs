@@ -25,15 +25,19 @@ namespace SearchAndDestroy
 		}
         protected override bool ExtraTargetValidator(Pawn pawn, Thing target)
         {
-            var targetPawn = target as Pawn;
-            if(targetPawn == null)
+            if (target is Pawn targetPawn)
             {
-                return false;
+                if (targetPawn.NonHumanlikeOrWildMan() && !targetPawn.IsAttacking())
+                {
+                    return false;
+                }
             }
-            if(targetPawn.NonHumanlikeOrWildMan() && !targetPawn.IsAttacking())
+
+            if (target is Building targetBuilding)
             {
-                return false;
+                // Check it's attackable?
             }
+            
             return base.ExtraTargetValidator(pawn, target);
         }
     }
