@@ -4,7 +4,7 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationInsert">
-				<xpath>*/ThinkTreeDef[defName = "AndroidLike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_QueuedJob"]</xpath>  
+				<xpath>*/ThinkTreeDef[defName = "Droidlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalColonist"]</xpath>
 				<value>
 					<li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
 					  <subNodes>
