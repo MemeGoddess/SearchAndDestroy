@@ -26,6 +26,11 @@ namespace SearchAndDestroy.Storage
                 ref _store, "store",
                 LookMode.Value, LookMode.Deep,
                 ref _idWorkingList, ref _extendedPawnDataWorkingList);
+
+            // Seems to null out on existing saves, value needs to be set
+            if(_store == null)
+                _store = new Dictionary<int, ExtendedPawnData>();
+
         }
 
         // Return the associate extended data for a given Pawn, creating a new association
@@ -34,7 +39,8 @@ namespace SearchAndDestroy.Storage
         {
 
             var id = pawn.thingIDNumber;
-            if (_store.TryGetValue(id, out ExtendedPawnData data))
+            ExtendedPawnData data = null;
+            if (_store.TryGetValue(id, out data))
             {
                 return data;
             }
