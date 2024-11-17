@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -29,16 +30,19 @@ namespace SearchAndDestroy
             {
                 if (targetPawn.NonHumanlikeOrWildMan() && !targetPawn.IsAttacking())
                 {
+                    Log.Warning($"{target.Label}: Returning false");
                     return false;
                 }
             }
 
-            if (target is Building targetBuilding)
+            if (target is Building targetBuilding && (pawn.equipment.Primary?.def.IsRangedWeapon ?? false))
             {
-                // Check it's attackable?
+                // Disable targeting for range, there's some weird stuff further down the tree that causes it to ignore for shooting
+                return false;
             }
             
-            return base.ExtraTargetValidator(pawn, target);
+            var baseResult = base.ExtraTargetValidator(pawn, target);
+            return baseResult;
         }
     }
 }

@@ -1,9 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchAndDestroy", "SearchAndDestroy.csproj", "{EB0FDC31-0570-42FC-A3C9-3E9248B62858}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB73F75D-CB73-4697-9BB1-467A554A7329}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patches", "Patches", "{BFCF1D3A-B453-483D-BBC9-F956803EEE7B}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\1.5\Patches\Androids.xml = ..\..\1.5\Patches\Androids.xml
+		..\..\1.5\Patches\AndroidTiers.xml = ..\..\1.5\Patches\AndroidTiers.xml
+		..\..\1.5\Patches\SearchAndDestroy.xml = ..\..\1.5\Patches\SearchAndDestroy.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +27,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BFCF1D3A-B453-483D-BBC9-F956803EEE7B} = {EB73F75D-CB73-4697-9BB1-467A554A7329}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98B38534-D9C2-4DF7-BE94-EE3833EC6B51}

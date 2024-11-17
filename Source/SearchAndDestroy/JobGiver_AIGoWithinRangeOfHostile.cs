@@ -78,8 +78,16 @@ namespace SearchAndDestroy
             
             targetList.AddRange(
                 pawn.Map.attackTargetsCache.TargetsHostileToFaction(faction)
-                .Where(attackTarget => thing.HostileTo(attackTarget.Thing)));
+                .Where(attackTarget => 
+                    thing.HostileTo(attackTarget.Thing) &&
+                    (!IsRangedPawn(pawn) || !(attackTarget is Building))));
+
             return targetList;
+        }
+
+        private bool IsRangedPawn(Pawn pawn)
+        {
+            return pawn.equipment.Primary != null && pawn.equipment.Primary.def.IsRangedWeapon;
         }
     }
 }
