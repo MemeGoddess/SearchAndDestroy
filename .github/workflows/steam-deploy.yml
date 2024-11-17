@@ -9,15 +9,11 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: steam-workshop-upload
-        uses: weilbyte/steam-workshop-upload@v1
+        uses: m00nl1ght-dev/steam-workshop-deploy@v1
         with: 
-          appid: 294100 # Game's Steam App ID
-          itemid: 3232242247 # Your mod's Steam Workshop ID
+          appId: 294100 # Game's Steam App ID
+          publishedFileId: 3232242247 # Your mod's Steam Workshop ID
           path: '' # Path to your mod's folder from repository root
-        env:
-          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }} # Your Steam username
-          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }} # Your Steam password
+          username: ${{ secrets.STEAM_USERNAME }}
+          configVdf: ${{ secrets.STEAM_CONFIG_VDF }}
