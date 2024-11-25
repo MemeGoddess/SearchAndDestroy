@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Verse;
 
 namespace SearchAndDestroy
 {
@@ -24,7 +25,7 @@ namespace SearchAndDestroy
         }
         public override void WorldLoaded()
         {
-            _extendedDataStorage = UtilityWorldObjectManager.GetUtilityWorldObject<ExtendedDataStorage>();
+            _extendedDataStorage = Find.World.GetComponent<ExtendedDataStorage>();
             base.WorldLoaded();
         }
     }

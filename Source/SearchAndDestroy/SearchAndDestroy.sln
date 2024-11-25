@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.9.34902.65
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35425.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchAndDestroy", "SearchAndDestroy.csproj", "{EB0FDC31-0570-42FC-A3C9-3E9248B62858}"
 EndProject
@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patches", "Patches", "{BFCF
 	ProjectSection(SolutionItems) = preProject
 		..\..\1.5\Patches\Androids.xml = ..\..\1.5\Patches\Androids.xml
 		..\..\1.5\Patches\AndroidTiers.xml = ..\..\1.5\Patches\AndroidTiers.xml
+		..\..\1.5\Patches\ClaySoldierRace.xml = ..\..\1.5\Patches\ClaySoldierRace.xml
 		..\..\1.5\Patches\SearchAndDestroy.xml = ..\..\1.5\Patches\SearchAndDestroy.xml
 	EndProjectSection
 EndProject

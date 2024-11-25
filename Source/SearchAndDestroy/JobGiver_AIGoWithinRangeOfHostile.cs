@@ -32,11 +32,6 @@ namespace SearchAndDestroy
             var targetA = (Thing)null;
             var potentialTargetsFor = pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn);
 
-            // Get extra targets (like mechanoids)
-            var extraTargets = GetTargets(pawn);
-            var newTargets = extraTargets.Where(x => !potentialTargetsFor.Contains(x)).ToList();
-            potentialTargetsFor.AddRange(newTargets);
-
             foreach (var target in potentialTargetsFor)
             {
                 if (target.ThreatDisabled(pawn))
@@ -66,28 +61,5 @@ namespace SearchAndDestroy
             job.expiryInterval = 30;
 			return job;
 		}
-
-        private List<IAttackTarget> GetTargets(Pawn pawn)
-        {
-            var targetList = new List<IAttackTarget>();
-            var th = (IAttackTargetSearcher)pawn;
-            var thing = th.Thing;
-            var faction = thing.Faction;
-            if (faction == null) 
-                return targetList;
-            
-            targetList.AddRange(
-                pawn.Map.attackTargetsCache.TargetsHostileToFaction(faction)
-                .Where(attackTarget => 
-                    thing.HostileTo(attackTarget.Thing) &&
-                    (!IsRangedPawn(pawn) || !(attackTarget is Building))));
-
-            return targetList;
-        }
-
-        private bool IsRangedPawn(Pawn pawn)
-        {
-            return pawn.equipment.Primary != null && pawn.equipment.Primary.def.IsRangedWeapon;
-        }
     }
 }

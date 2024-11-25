@@ -30,17 +30,10 @@ namespace SearchAndDestroy
             {
                 if (targetPawn.NonHumanlikeOrWildMan() && !targetPawn.IsAttacking())
                 {
-                    Log.Warning($"{target.Label}: Returning false");
                     return false;
                 }
             }
 
-            if (target is Building targetBuilding && (pawn.equipment.Primary?.def.IsRangedWeapon ?? false))
-            {
-                // Disable targeting for range, there's some weird stuff further down the tree that causes it to ignore for shooting
-                return false;
-            }
-            
             var baseResult = base.ExtraTargetValidator(pawn, target);
             return baseResult;
         }
