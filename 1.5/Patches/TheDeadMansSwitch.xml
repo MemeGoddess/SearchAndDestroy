@@ -7,7 +7,7 @@
     <match Class="PatchOperationSequence">
       <operations>
         <li Class="PatchOperationAdd">
-          <xpath>Defs/ThinkTreeDef[defName = "DMS_Mechanoid"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalOfPlayerFaction"]/subNodes</xpath>
+          <xpath>Defs/ThinkTreeDef[defName = "DMS_Mechanoid" or "DMS_HumanlikeMech"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalOfPlayerFaction"]/subNodes</xpath>
           <order>Prepend</order>
           <value>
             <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
