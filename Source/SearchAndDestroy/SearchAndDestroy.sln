@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchAndDestroy", "SearchA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB73F75D-CB73-4697-9BB1-467A554A7329}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\About\About.xml = ..\..\About\About.xml
 		..\..\.github\workflows\steam-deploy.yml = ..\..\.github\workflows\steam-deploy.yml
 	EndProjectSection
 EndProject
@@ -14,8 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patches", "Patches", "{BFCF
 	ProjectSection(SolutionItems) = preProject
 		..\..\1.5\Patches\Androids.xml = ..\..\1.5\Patches\Androids.xml
 		..\..\1.5\Patches\AndroidTiers.xml = ..\..\1.5\Patches\AndroidTiers.xml
+		..\..\1.5\Patches\CindersoftheEmbergarden.xml = ..\..\1.5\Patches\CindersoftheEmbergarden.xml
 		..\..\1.5\Patches\ClaySoldierRace.xml = ..\..\1.5\Patches\ClaySoldierRace.xml
+		..\..\1.5\Patches\DragonsDescent.xml = ..\..\1.5\Patches\DragonsDescent.xml
 		..\..\1.5\Patches\SearchAndDestroy.xml = ..\..\1.5\Patches\SearchAndDestroy.xml
+		..\..\1.5\Patches\VFE.xml = ..\..\1.5\Patches\VFE.xml
+		..\..\1.5\Patches\TheDeadMansSwitch.xml = ..\..\1.5\Patches\TheDeadMansSwitch.xml
 	EndProjectSection
 EndProject
 Global

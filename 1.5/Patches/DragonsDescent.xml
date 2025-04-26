@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Dragons Descent</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationInsert">
+          <xpath>Defs/ThinkTreeDef[defName = "Dragon"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalForcedGoto"]</xpath>
+          <order>Append</order>
+          <value>
+            <li Class="ThinkNode_ConditionalTrainableCompleted">
+              <trainable>Release</trainable>
+              <subNodes>
+                <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+                  <subNodes>
+                    <li Class="ThinkNode_Priority">
+                      <subNodes>
+                        <!-- <li Class="JobGiver_MoveToStandable"/> -->
+                        <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+                          <targetAcquireRadius>200</targetAcquireRadius>
+                          <targetKeepRadius>72</targetKeepRadius>
+                          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+                        </li>
+                        <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
