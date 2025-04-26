@@ -50,21 +50,26 @@
 		<xpath>Defs/ThinkTreeDef[defName = "Animal"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalForcedGoto"]</xpath>
 		<order>Append</order>
 		<value>
-			<li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
-                <subNodes>
-                    <li Class="ThinkNode_Priority">
-                    <subNodes>
-                        <!-- <li Class="JobGiver_MoveToStandable"/> -->
-                        <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
-                        <targetAcquireRadius>200</targetAcquireRadius>
-                        <targetKeepRadius>72</targetKeepRadius>
-                        <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
-                        </li>
-                        <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
-                    </subNodes>
-                    </li>
-                </subNodes>
-			</li>
+      <li Class="ThinkNode_ConditionalTrainableCompleted">
+        <trainable>Release</trainable>
+        <subNodes>
+          <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+              <subNodes>
+                  <li Class="ThinkNode_Priority">
+                  <subNodes>
+                      <!-- <li Class="JobGiver_MoveToStandable"/> -->
+                      <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+                      <targetAcquireRadius>200</targetAcquireRadius>
+                      <targetKeepRadius>72</targetKeepRadius>
+                      <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+                      </li>
+                      <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+                  </subNodes>
+                  </li>
+              </subNodes>
+						</li>
+          </subNodes>
+      </li>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationFindMod">

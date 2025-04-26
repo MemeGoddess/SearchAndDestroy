@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 	<SD_Reason_Downed>Cannot activate Search and Destroy for a downed pawn.</SD_Reason_Downed>
+	<SD_Reason_Animal>Cannot activate Search and Destroy for an untrained Animal.</SD_Reason_Animal>
 	<SD_Gizmo_Melee_Label>Search and Destroy (m)</SD_Gizmo_Melee_Label>
 	<SD_Gizmo_Melee_Description>Activate search and destroy for a melee pawn.</SD_Gizmo_Melee_Description>
 	<SD_Gizmo_Ranged_Label>Search and Destroy (r)</SD_Gizmo_Ranged_Label>

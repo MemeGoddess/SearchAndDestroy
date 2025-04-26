@@ -59,6 +59,13 @@ namespace SearchAndDestroy.Harmony
                 disabled = true;
                 disabledReason = "SD_Reason_Downed".Translate();
             }
+
+            if (__instance.pawn.IsNonMutantAnimal && !__instance.pawn.training.HasLearned(TrainableDefOf.Release))
+            {
+                disabled = true;
+                disabledReason = "SD_Reason_Animal".Translate();
+            }
+
             Gizmo gizmo = new Command_Toggle
             {
                 defaultLabel = "SD_Gizmo_Melee_Label".Translate(),
@@ -90,6 +97,13 @@ namespace SearchAndDestroy.Harmony
                 disabled = true;
                 disabledReason = "SD_Reason_Downed".Translate();
             }
+
+            if (__instance.pawn.IsNonMutantAnimal && !__instance.pawn.training.HasLearned(TrainableDefOf.Release))
+            {
+                disabled = true;
+                disabledReason = "SD_Reason_Animal".Translate();
+            }
+
             Gizmo gizmo = new Command_Toggle
             {
                 defaultLabel = "SD_Gizmo_Ranged_Label".Translate(),
