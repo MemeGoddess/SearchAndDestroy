@@ -21,7 +21,7 @@ jobs:
           publishedFileId: 3232242247 # Your mod's Steam Workshop ID
           path: 'mod' # Path to your mod's folder from repository root
           username: ${{ secrets.STEAM_USERNAME }}
-          configVdf:  Test #${{ secrets.STEAM_CONFIG_VDF }}
+          configVdf:  ${{ secrets.STEAM_CONFIG_VDF }}
 
       - name: check
         run: |
