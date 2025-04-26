@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: steam-workshop-upload
-        uses: m00nl1ght-dev/steam-workshop-deploy@v1
+        uses: m00nl1ght-dev/steam-workshop-deploy@v3
         with: 
           appId: 294100 # Game's Steam App ID
           publishedFileId: 3232242247 # Your mod's Steam Workshop ID
