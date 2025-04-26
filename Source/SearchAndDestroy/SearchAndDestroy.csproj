@@ -54,12 +54,19 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" />
-    <PackageReference Include="Lib.Harmony">
-      <Version>2.0.0.7</Version>
+    <PackageReference Include="Lib.Harmony" GeneratePathProperty="true">
+      <Version>2.3.6</Version>
     </PackageReference>
-    <PackageReference Include="UnlimitedHugs.Rimworld.HugsLib">
+    <PackageReference Include="UnlimitedHugs.Rimworld.HugsLib" GeneratePathProperty="true">
       <Version>7.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <Target Name="RemovePackageDllsFromOutput" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Remove="@(ReferencePath)" Condition="'%(FileName)' == 'Lib.Harmony'" />
+      <ReferencePath Remove="@(ReferencePath)" Condition="'%(FileName)' == 'UnlimitedHugs.Rimworld.HugsLib'" />
+
+    </ItemGroup>
+  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
