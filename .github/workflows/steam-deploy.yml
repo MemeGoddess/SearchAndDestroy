@@ -13,6 +13,15 @@ jobs:
         with:
             path: 'mod'
 
+      - name: cleanup-repo
+        run: |
+            rm -rf mod/.git
+            rm -rf mod/.github/workflows
+            rm -rf mod/.github
+            rm -rf mod/.gitignore
+            rm -rf mod/.gitattributes
+            rm -rf mod/README.md
+
       - name: steam-workshop-upload
         uses: m00nl1ght-dev/steam-workshop-deploy@v3
         continue-on-error: true
