@@ -31,8 +31,4 @@ jobs:
           path: 'mod' # Path to your mod's folder from repository root
           username: ${{ secrets.STEAM_USERNAME }}
           configVdf:  ${{ secrets.STEAM_CONFIG_VDF }}
-
-      - name: check
-        run: |
-            ls -la
-            ls -la mod
+          changeNote: ${{ github.event.head_commit.message }}
