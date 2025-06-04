@@ -50,9 +50,9 @@
 		<xpath>Defs/ThinkTreeDef[defName = "Animal"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalForcedGoto"]</xpath>
 		<order>Append</order>
 		<value>
-      <li Class="ThinkNode_ConditionalTrainableCompleted">
+      <!--<li Class="ThinkNode_ConditionalTrainableCompleted">
         <trainable>Release</trainable>
-        <subNodes>
+        <subNodes>-->
           <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
               <subNodes>
                   <li Class="ThinkNode_Priority">
@@ -68,8 +68,8 @@
                   </li>
               </subNodes>
 						</li>
-          </subNodes>
-      </li>
+          <!--</subNodes>
+      </li>-->
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationFindMod">

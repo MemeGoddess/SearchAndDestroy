@@ -98,11 +98,12 @@ namespace SearchAndDestroy.Harmony
                 disabledReason = "SD_Reason_Downed".Translate();
             }
 
-            if (__instance.pawn.IsNonMutantAnimal && __instance.pawn.training.CanBeTrained(TrainableDefOf.Tameness) && !__instance.pawn.training.HasLearned(TrainableDefOf.Release))
-            {
-                disabled = true;
-                disabledReason = "SD_Reason_Animal".Translate();
-            }
+            // Disabled for now, was causing some mod conflicts, will probably need a custom conditional
+            //if (__instance.pawn.IsNonMutantAnimal && __instance.pawn.training.CanBeTrained(TrainableDefOf.Tameness) && !__instance.pawn.training.HasLearned(TrainableDefOf.Release))
+            //{
+            //    disabled = true;
+            //    disabledReason = "SD_Reason_Animal".Translate();
+            //}
 
             Gizmo gizmo = new Command_Toggle
             {
