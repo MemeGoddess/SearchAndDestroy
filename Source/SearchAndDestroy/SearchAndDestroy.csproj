@@ -52,6 +52,9 @@
     <Compile Include="JobGiver_AIGoWithinRangeOfHostile.cs" />
     <Compile Include="ThinkNode_ConditionalSearchAndDestroy.cs" />
   </ItemGroup>
+  <ItemDefinitionGroup>
+    <PackageReference ExcludeAssets="runtime" />
+  </ItemDefinitionGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" />
     <PackageReference Include="Lib.Harmony" GeneratePathProperty="true">
@@ -61,12 +64,5 @@
       <Version>7.0.1</Version>
     </PackageReference>
   </ItemGroup>
-  <Target Name="RemovePackageDllsFromOutput" AfterTargets="ResolveReferences">
-    <ItemGroup>
-      <ReferencePath Remove="@(ReferencePath)" Condition="'%(FileName)' == 'Lib.Harmony'" />
-      <ReferencePath Remove="@(ReferencePath)" Condition="'%(FileName)' == 'UnlimitedHugs.Rimworld.HugsLib'" />
-
-    </ItemGroup>
-  </Target>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
