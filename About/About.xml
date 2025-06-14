@@ -23,9 +23,6 @@
 Tired of pawns lounging about during the heat of the battle? Toggle Search and Destroy to let the AI take control over your pawns while you sit back and enjoy the slaughter. 
 
 Used the exact same AI as enemy pawns, so please don't get mad at me when your pawns screw up. This mod is intended to complement manual control and alleviate some micro-management, not to completely replace manual control.  		
-		
-&lt;color=orange&gt;&lt;b&gt;Dependencies &lt;/b&gt;&lt;/color&gt;
-This mod depends on Hugslib. Load order should be: Hugslib -> Search and Destroy.
 	</description>
   <loadAfter>
     <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
