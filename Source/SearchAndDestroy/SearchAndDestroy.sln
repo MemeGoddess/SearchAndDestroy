@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchAndDestroy", "SearchAndDestroy.csproj", "{EB0FDC31-0570-42FC-A3C9-3E9248B62858}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchAndDestroy", "SearchAndDestroy.csproj", "{EB0FDC31-0570-42FC-A3C9-3E9248B62858}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB73F75D-CB73-4697-9BB1-467A554A7329}"
 	ProjectSection(SolutionItems) = preProject
@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\.github\workflows\steam-deploy.yml = ..\..\.github\workflows\steam-deploy.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patches", "Patches", "{BFCF1D3A-B453-483D-BBC9-F956803EEE7B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patches", "Patches", "{89FB0E39-FFD9-485C-93B0-AA59B39D5151}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.5", "1.5", "{34898337-2A9F-44EC-B5BC-89316E7F59FA}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\1.5\Patches\Androids.xml = ..\..\1.5\Patches\Androids.xml
 		..\..\1.5\Patches\AndroidTiers.xml = ..\..\1.5\Patches\AndroidTiers.xml
@@ -19,16 +21,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Patches", "Patches", "{BFCF
 		..\..\1.5\Patches\ClaySoldierRace.xml = ..\..\1.5\Patches\ClaySoldierRace.xml
 		..\..\1.5\Patches\DragonsDescent.xml = ..\..\1.5\Patches\DragonsDescent.xml
 		..\..\1.5\Patches\SearchAndDestroy.xml = ..\..\1.5\Patches\SearchAndDestroy.xml
-		..\..\1.5\Patches\VFE.xml = ..\..\1.5\Patches\VFE.xml
 		..\..\1.5\Patches\TheDeadMansSwitch.xml = ..\..\1.5\Patches\TheDeadMansSwitch.xml
+		..\..\1.5\Patches\VFE.xml = ..\..\1.5\Patches\VFE.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.6", "1.6", "{9A4DB028-A489-40BC-90C9-BDC1515FF57A}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\1.6\Patches\Androids.xml = ..\..\1.6\Patches\Androids.xml
+		..\..\1.6\Patches\AndroidTiers.xml = ..\..\1.6\Patches\AndroidTiers.xml
+		..\..\1.6\Patches\ClaySoldierRace.xml = ..\..\1.6\Patches\ClaySoldierRace.xml
+		..\..\1.6\Patches\DragonsDescent.xml = ..\..\1.6\Patches\DragonsDescent.xml
+		..\..\1.6\Patches\SearchAndDestroy.xml = ..\..\1.6\Patches\SearchAndDestroy.xml
+		..\..\1.6\Patches\TheDeadMansSwitch.xml = ..\..\1.6\Patches\TheDeadMansSwitch.xml
+		..\..\1.6\Patches\VFE.xml = ..\..\1.6\Patches\VFE.xml
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		1.5|Any CPU = 1.5|Any CPU
+		1.6|Any CPU = 1.6|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB0FDC31-0570-42FC-A3C9-3E9248B62858}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{EB0FDC31-0570-42FC-A3C9-3E9248B62858}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{EB0FDC31-0570-42FC-A3C9-3E9248B62858}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+		{EB0FDC31-0570-42FC-A3C9-3E9248B62858}.1.6|Any CPU.Build.0 = 1.6|Any CPU
 		{EB0FDC31-0570-42FC-A3C9-3E9248B62858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB0FDC31-0570-42FC-A3C9-3E9248B62858}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB0FDC31-0570-42FC-A3C9-3E9248B62858}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,7 +57,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BFCF1D3A-B453-483D-BBC9-F956803EEE7B} = {EB73F75D-CB73-4697-9BB1-467A554A7329}
+		{89FB0E39-FFD9-485C-93B0-AA59B39D5151} = {EB73F75D-CB73-4697-9BB1-467A554A7329}
+		{34898337-2A9F-44EC-B5BC-89316E7F59FA} = {89FB0E39-FFD9-485C-93B0-AA59B39D5151}
+		{9A4DB028-A489-40BC-90C9-BDC1515FF57A} = {89FB0E39-FFD9-485C-93B0-AA59B39D5151}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {98B38534-D9C2-4DF7-BE94-EE3833EC6B51}

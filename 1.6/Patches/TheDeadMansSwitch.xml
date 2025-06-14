@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>The Dead Man's Switch</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThinkTreeDef[defName = "DMS_Mechanoid" or "DMS_HumanlikeMech"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalOfPlayerFaction"]/subNodes</xpath>
+          <order>Prepend</order>
+          <value>
+            <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+              <subNodes>
+                <li Class="ThinkNode_Priority">
+                  <subNodes>
+                    <!-- <li Class="JobGiver_MoveToStandable"/> -->
+                    <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+                      <targetAcquireRadius>200</targetAcquireRadius>
+                      <targetKeepRadius>72</targetKeepRadius>
+                      <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+                    </li>
+                    <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>

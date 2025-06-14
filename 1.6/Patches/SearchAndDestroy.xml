@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName = "Humanlike"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalColonist"]</xpath> <!--Priority is important here, hence the insert after this specific subNode--> 
+		<value> 
+			 <!-- Do search and destroy instead of waiting -->
+			<li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+			  <subNodes>
+				<li Class="ThinkNode_Priority">
+				  <subNodes>
+				    <!-- <li Class="JobGiver_MoveToStandable"/> -->
+					<li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+					  <targetAcquireRadius>200</targetAcquireRadius>
+					  <targetKeepRadius>72</targetKeepRadius>
+					</li>
+					<li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+				  </subNodes>
+				</li>
+			  </subNodes>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Anomaly</li>
+		</mods>
+		<match Class="PatchOperationInsert">
+			<xpath>Defs/ThinkTreeDef[defName = "Ghoul"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalOfPlayerFaction"]</xpath>
+			<value>
+				<li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+				  <subNodes>
+					<li Class="ThinkNode_Priority">
+					  <subNodes>
+					    <!-- <li Class="JobGiver_MoveToStandable"/> -->
+						<li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+						  <targetAcquireRadius>200</targetAcquireRadius>
+						  <targetKeepRadius>72</targetKeepRadius>
+						  <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+						</li>
+						<li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+					  </subNodes>
+					</li>
+				  </subNodes>
+				</li>
+			</value>
+		</match>
+	</Operation>
+	<!-- Allow all draftable animals, or more specifically, mods with draftable races that inherit animal -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName = "Animal"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalForcedGoto"]</xpath>
+		<order>Append</order>
+		<value>
+      <!--<li Class="ThinkNode_ConditionalTrainableCompleted">
+        <trainable>Release</trainable>
+        <subNodes>-->
+          <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+              <subNodes>
+                  <li Class="ThinkNode_Priority">
+                  <subNodes>
+                      <!-- <li Class="JobGiver_MoveToStandable"/> -->
+                      <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+                      <targetAcquireRadius>200</targetAcquireRadius>
+                      <targetKeepRadius>72</targetKeepRadius>
+                      <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+                      </li>
+                      <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+                  </subNodes>
+                  </li>
+              </subNodes>
+						</li>
+          <!--</subNodes>
+      </li>-->
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Biotech</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThinkTreeDef[defName="Mechanoid"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalOfPlayerFaction"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes</xpath>
+			<order>Prepend</order>
+			<value>
+				<li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+					<subNodes>
+						<li Class="ThinkNode_Priority">
+						<subNodes>
+							<!-- <li Class="JobGiver_MoveToStandable"/> -->
+							<li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+							<targetAcquireRadius>200</targetAcquireRadius>
+							<targetKeepRadius>72</targetKeepRadius>
+							<needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+							</li>
+							<li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+						</subNodes>
+						</li>
+					</subNodes>
+				</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>
