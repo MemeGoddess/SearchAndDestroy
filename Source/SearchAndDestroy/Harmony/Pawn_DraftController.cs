@@ -60,11 +60,11 @@ namespace SearchAndDestroy.Harmony
                 disabledReason = "SD_Reason_Downed".Translate();
             }
 
-            if (__instance.pawn.IsNonMutantAnimal && __instance.pawn.training.CanBeTrained(TrainableDefOf.Tameness) && !__instance.pawn.training.HasLearned(TrainableDefOf.Release))
-            {
-                disabled = true;
-                disabledReason = "SD_Reason_Animal".Translate();
-            }
+            //if (__instance.pawn.IsNonMutantAnimal && __instance.pawn.training.CanBeTrained(TrainableDefOf.Tameness) && !__instance.pawn.training.HasLearned(TrainableDefOf.Release))
+            //{
+            //    disabled = true;
+            //    disabledReason = "SD_Reason_Animal".Translate();
+            //}
 
             Gizmo gizmo = new Command_Toggle
             {
