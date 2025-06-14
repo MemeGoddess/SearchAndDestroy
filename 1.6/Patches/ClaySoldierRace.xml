@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Clay Soldier Race</li>
+    </mods>
+    <match Class="PatchOperationInsert">
+      <xpath>Defs/ThinkTreeDef[defName = "CL_Golem"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalColonist"]</xpath>
+      <value>
+        <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <!-- <li Class="JobGiver_MoveToStandable"/> -->
+                <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+                  <targetAcquireRadius>200</targetAcquireRadius>
+                  <targetKeepRadius>72</targetKeepRadius>
+                  <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
+                </li>
+                <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

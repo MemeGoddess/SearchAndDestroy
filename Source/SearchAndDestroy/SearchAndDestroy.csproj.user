@@ -2,6 +2,20 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
+    <StartProgram>C:\RIMWorld_Debug\RimWorld1.6\RimWorldWin64.exe</StartProgram>
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.6|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\RIMWorld_Debug\RimWorld1.6\RimWorldWin64.exe</StartProgram>
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.5|AnyCPU'">
+    <StartAction>Program</StartAction>
     <StartProgram>C:\RIMWorld_Debug\RimWorld\RimWorldWin64.exe</StartProgram>
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ActiveDebugProfile>RimWorld 1.6</ActiveDebugProfile>
   </PropertyGroup>
 </Project>

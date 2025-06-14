@@ -1,28 +1,48 @@
-﻿using HugsLib;
+﻿using HarmonyLib;
 using SearchAndDestroy.Storage;
+using System;
 using Verse;
 
 namespace SearchAndDestroy
 {
-    class Base : ModBase
+    class Base : Mod
     {
-        public override string ModIdentifier => "SearchAndDestroy";
         public static Base Instance { get; private set; }
-        private ExtendedDataStorage _extendedDataStorage;
 
-        public Base()
+        public ExtendedDataStorage ExtendedDataStorage { get; private set; }
+
+        private HarmonyLib.Harmony harmony;
+
+        public Base(ModContentPack content) : base(content)
         {
             Instance = this;
+            harmony = new HarmonyLib.Harmony("MemeGoddess.SearchAndDestroy");
+            try
+            {
+                harmony.PatchAll(GetType().Assembly);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Failed to apply Harmony patches for Search & Destroy: {ex as object}");
+            }
+
         }
-        public ExtendedDataStorage GetExtendedDataStorage()
+
+        public static void LoadExtendedDataStorage()
         {
-            return _extendedDataStorage;
+            Instance.ExtendedDataStorage = Find.World.GetComponent<ExtendedDataStorage>();
         }
-        public override void WorldLoaded()
-        {
-            _extendedDataStorage = Find.World.GetComponent<ExtendedDataStorage>();
-            base.WorldLoaded();
-        }
+
+        
+    }
+
+    [HarmonyPatch(typeof(Game))]
+    [HarmonyPatch("FinalizeInit")]
+    [HarmonyPatch(new System.Type[] { })]
+    internal static class ExtendedDataStorageLoader
+    {
+        [HarmonyPostfix]
+        private static void Load() => Base.LoadExtendedDataStorage();
     }
 
 

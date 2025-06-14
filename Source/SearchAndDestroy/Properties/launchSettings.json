@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "RimWorld 1.5": {
+      "commandName": "Executable",
+      "executablePath": "C:\\RIMWorld_Debug\\RimWorld\\RimWorldWin64.exe",
+      "commandLineArgs": "-savedatafolder=C:\\RIMWorld_Debug\\RimWorld\\SaveDataSD"
+    },
+    "RimWorld 1.6": {
+      "commandName": "Executable",
+      "executablePath": "C:\\RIMWorld_Debug\\RimWorld1.6\\RimWorldWin64.exe",
+      "commandLineArgs": "-savedatafolder=C:\\RIMWorld_Debug\\SaveDataSD1.6"
+    }
+  }
+}

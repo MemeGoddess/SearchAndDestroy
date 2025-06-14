@@ -15,7 +15,7 @@ namespace SearchAndDestroy.Harmony
             
             if (pawn.Drafted)
             {
-                ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+                ExtendedPawnData pawnData = Base.Instance.ExtendedDataStorage.GetExtendedDataFor(pawn);
                 if(pawnData.SD_enabled && __instance.jobQueue.Count > 0)
                 {
                     QueuedJob qjob = __instance.jobQueue.Last();  

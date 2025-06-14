@@ -12,7 +12,7 @@ namespace SearchAndDestroy.Harmony
         {
             if (__result != null)
             {
-                ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+                ExtendedDataStorage store = Base.Instance.ExtendedDataStorage;
                 if (store != null)
                 {
                     ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);

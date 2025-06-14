@@ -8,7 +8,7 @@ namespace SearchAndDestroy
     {
         protected override bool Satisfied(Pawn pawn)
         {
-            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(pawn);
+            ExtendedPawnData pawnData = Base.Instance.ExtendedDataStorage.GetExtendedDataFor(pawn);
             return pawn.Drafted && pawnData.SD_enabled;
         }
     }
