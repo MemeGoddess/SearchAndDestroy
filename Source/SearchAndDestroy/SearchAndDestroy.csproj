@@ -60,9 +60,6 @@
     <PackageReference Include="Lib.Harmony" GeneratePathProperty="true">
       <Version>2.3.6</Version>
     </PackageReference>
-    <PackageReference Include="UnlimitedHugs.Rimworld.HugsLib" GeneratePathProperty="true">
-      <Version>7.0.1</Version>
-    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

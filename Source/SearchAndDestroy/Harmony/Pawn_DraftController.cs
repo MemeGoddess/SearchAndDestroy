@@ -14,7 +14,7 @@ namespace SearchAndDestroy.Harmony
     {
         public static void Postfix(Pawn_DraftController __instance)
         {
-            ExtendedDataStorage store = Base.Instance.GetExtendedDataStorage();
+            ExtendedDataStorage store = Base.Instance.ExtendedDataStorage;
             if(store != null && !__instance.Drafted)
             {
                 ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance.pawn);
@@ -52,7 +52,7 @@ namespace SearchAndDestroy.Harmony
             bool disabled = false;
             PawnDuty duty = __instance.pawn.mindState.duty;
 
-            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance.pawn);
+            ExtendedPawnData pawnData = Base.Instance.ExtendedDataStorage.GetExtendedDataFor(__instance.pawn);
 
             if (__instance.pawn.Downed)
             {
@@ -90,7 +90,7 @@ namespace SearchAndDestroy.Harmony
             bool disabled = false;
             PawnDuty duty = __instance.pawn.mindState.duty;
 
-            ExtendedPawnData pawnData = Base.Instance.GetExtendedDataStorage().GetExtendedDataFor(__instance.pawn);
+            ExtendedPawnData pawnData = Base.Instance.ExtendedDataStorage.GetExtendedDataFor(__instance.pawn);
 
             if (__instance.pawn.Downed)
             {
