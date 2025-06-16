@@ -10,11 +10,11 @@
 					  <subNodes>
 						<li Class="ThinkNode_Priority">
 						  <subNodes>
-							<li Class="JobGiver_AIFightEnemies">
+							<li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
 							  <targetAcquireRadius>200</targetAcquireRadius>
 							  <targetKeepRadius>72</targetKeepRadius>
 							</li>
-							<li Class="JobGiver_AIGotoNearestHostile" />
+							<li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile" />
 						  </subNodes>
 						</li>
 					  </subNodes>
