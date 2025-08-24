@@ -9,39 +9,31 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+        <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <Optimize>false</Optimize>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+        <OutputPath>..\..\1.6\Assemblies</OutputPath>
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <WarningLevel>4</WarningLevel>
+        <Prefer32Bit>false</Prefer32Bit>
+    </PropertyGroup>
+
   <ItemDefinitionGroup>
     <PackageReference ExcludeAssets="runtime" />
   </ItemDefinitionGroup>
 
-  <PropertyGroup Condition="'$(Configuration)' == '1.5'">
-    <OutputPath>..\..\1.5\Assemblies</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)' == '1.6'">
-    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
-  </PropertyGroup>
-
   <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4543" />
     <PackageReference Include="Lib.Harmony" Version="2.3.6" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)' == '1.5'">
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4409" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(Configuration)' == '1.6'">
-    <Reference Include="Assembly-CSharp">
-      <HintPath>C:\RIMWorld_Debug\RimWorld1.6\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>C:\RIMWorld_Debug\RimWorld1.6\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\RIMWorld_Debug\RimWorld1.6\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
 
 
