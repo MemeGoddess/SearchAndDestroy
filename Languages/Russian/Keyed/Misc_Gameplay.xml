@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SD_Reason_Downed>Нельзя активировать «Поиск и уничтожение» для поверженной пешки.</SD_Reason_Downed>
+  <SD_Reason_Animal>Нельзя активировать «Поиск и уничтожение» для неприученного животного.</SD_Reason_Animal>
+  <SD_Gizmo_Melee_Label>Поиск и уничтожение (б)</SD_Gizmo_Melee_Label>
+  <SD_Gizmo_Melee_Description>Активировать режим «Поиск и уничтожение» для бойца ближнего боя.</SD_Gizmo_Melee_Description>
+  <SD_Gizmo_Ranged_Label>Поиск и уничтожение (д)</SD_Gizmo_Ranged_Label>
+  <SD_Gizmo_Ranged_Description>Активировать режим «Поиск и уничтожение» для бойца дальнего боя.</SD_Gizmo_Ranged_Description>
+</LanguageData>
