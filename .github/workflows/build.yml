@@ -40,6 +40,7 @@ jobs:
             rm -rf .gitignore
             rm -rf .gitattributes
             rm -rf README.md
+            rm -rf "Source/Old Versions"
             sudo rm -rf Workshop
             find . -type d -name "obj" -exec rm -rf {} +
 
