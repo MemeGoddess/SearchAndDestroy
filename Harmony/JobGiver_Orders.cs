@@ -5,6 +5,7 @@ using Verse.AI;
 
 namespace SearchAndDestroy.Harmony
 {
+    [HarmonyPatchCategory(nameof(Tacticowl.PatchCategories.SearchAndDestroy))]
     [HarmonyPatch(typeof(JobGiver_Orders), "TryGiveJob")]
     static class JobGiver_Orders_TryGiveJob
     {
@@ -12,7 +13,7 @@ namespace SearchAndDestroy.Harmony
         {
             if (__result != null)
             {
-                ExtendedDataStorage store = Base.Instance.ExtendedDataStorage;
+                ExtendedDataStorage store = ExtendedDataStorage.GetComp();
                 if (store != null)
                 {
                     ExtendedPawnData pawnData = store.GetExtendedDataFor(pawn);

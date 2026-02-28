@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using RimWorld.Planet;
+using Tacticowl.Components;
 using Verse;
 
 namespace SearchAndDestroy.Storage
 {
 
 
-    public class ExtendedDataStorage : WorldComponent, IExposable
+    public class ExtendedDataStorage : FetchOnceWorldComponent<ExtendedDataStorage>, IExposable
     {
         private Dictionary<int, ExtendedPawnData> _store =
             new Dictionary<int, ExtendedPawnData>();

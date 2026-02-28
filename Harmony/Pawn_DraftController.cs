@@ -9,12 +9,13 @@ using Verse.AI;
 
 namespace SearchAndDestroy.Harmony
 {
+    [HarmonyPatchCategory(nameof(Tacticowl.PatchCategories.SearchAndDestroy))]
     [HarmonyPatch(typeof(Pawn_DraftController), "set_Drafted")]
     public static class Pawn_DraftController_set_Drafted
     {
         public static void Postfix(Pawn_DraftController __instance)
         {
-            ExtendedDataStorage store = Base.Instance.ExtendedDataStorage;
+            ExtendedDataStorage store = ExtendedDataStorage.GetComp();
             if(store != null && !__instance.Drafted)
             {
                 ExtendedPawnData pawnData = store.GetExtendedDataFor(__instance.pawn);
@@ -23,6 +24,7 @@ namespace SearchAndDestroy.Harmony
         }
     }
 
+    [HarmonyPatchCategory(nameof(Tacticowl.PatchCategories.SearchAndDestroy))]
     [HarmonyPatch(typeof(Pawn_DraftController), "GetGizmos")]
     public static class Pawn_DraftController_GetGizmos
     {
@@ -52,7 +54,7 @@ namespace SearchAndDestroy.Harmony
             bool disabled = false;
             PawnDuty duty = __instance.pawn.mindState.duty;
 
-            ExtendedPawnData pawnData = Base.Instance.ExtendedDataStorage.GetExtendedDataFor(__instance.pawn);
+            ExtendedPawnData pawnData = ExtendedDataStorage.GetComp().GetExtendedDataFor(__instance.pawn);
 
             if (__instance.pawn.Downed)
             {
@@ -90,7 +92,7 @@ namespace SearchAndDestroy.Harmony
             bool disabled = false;
             PawnDuty duty = __instance.pawn.mindState.duty;
 
-            ExtendedPawnData pawnData = Base.Instance.ExtendedDataStorage.GetExtendedDataFor(__instance.pawn);
+            ExtendedPawnData pawnData = ExtendedDataStorage.GetComp().GetExtendedDataFor(__instance.pawn);
 
             if (__instance.pawn.Downed)
             {

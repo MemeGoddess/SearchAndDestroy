@@ -6,6 +6,7 @@ using Verse.AI;
 
 namespace SearchAndDestroy.Harmony
 {
+    [HarmonyPatchCategory(nameof(Tacticowl.PatchCategories.SearchAndDestroy))]
     [HarmonyPatch(typeof(Pawn_JobTracker), "DetermineNextJob")]
     static class Pawn_JobTracker_DetermineNextJob
     {
@@ -15,7 +16,7 @@ namespace SearchAndDestroy.Harmony
             
             if (pawn.Drafted)
             {
-                ExtendedPawnData pawnData = Base.Instance.ExtendedDataStorage.GetExtendedDataFor(pawn);
+                ExtendedPawnData pawnData = ExtendedDataStorage.GetComp().GetExtendedDataFor(pawn);
                 if(pawnData.SD_enabled && __instance.jobQueue.Count > 0)
                 {
                     QueuedJob qjob = __instance.jobQueue.Last();  
