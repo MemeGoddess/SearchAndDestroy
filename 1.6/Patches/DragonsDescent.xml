@@ -10,22 +10,17 @@
           <xpath>Defs/ThinkTreeDef[defName = "Dragon"]/thinkRoot[@Class = "ThinkNode_Priority"]/subNodes/li[@Class="ThinkNode_ConditionalForcedGoto"]</xpath>
           <order>Append</order>
           <value>
-            <li Class="ThinkNode_ConditionalTrainableCompleted">
-              <trainable>Release</trainable>
+            <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
               <subNodes>
-                <li Class="SearchAndDestroy.ThinkNode_ConditionalSearchAndDestroy">
+                <li Class="ThinkNode_Priority">
                   <subNodes>
-                    <li Class="ThinkNode_Priority">
-                      <subNodes>
-                        <!-- <li Class="JobGiver_MoveToStandable"/> -->
-                        <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
-                          <targetAcquireRadius>200</targetAcquireRadius>
-                          <targetKeepRadius>72</targetKeepRadius>
-                          <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
-                        </li>
-                        <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
-                      </subNodes>
+                    <!-- <li Class="JobGiver_MoveToStandable"/> -->
+                    <li Class="SearchAndDestroy.JobGiver_AIFightEnemiesShortExp">
+                      <targetAcquireRadius>200</targetAcquireRadius>
+                      <targetKeepRadius>72</targetKeepRadius>
+                      <needLOSToAcquireNonPawnTargets>true</needLOSToAcquireNonPawnTargets>
                     </li>
+                    <li Class="SearchAndDestroy.JobGiver_GoWithinRangeOfHostile"/>
                   </subNodes>
                 </li>
               </subNodes>
